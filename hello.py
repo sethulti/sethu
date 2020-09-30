@@ -13,7 +13,6 @@ print(msg)
 print(msg1) 
 
 name = "Sethu"
-
 print (name) 
 
 para_str = """this is a long string that is made up of
