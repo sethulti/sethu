@@ -1,7 +1,9 @@
 import time
 import sys
 import calendar
+from tkinter import *
 
+gui.configure(bg='green')
 calendar = calendar.month(2020,10)
 print (calendar)
 localtime = time.localtime(time.time())
