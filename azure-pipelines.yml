@@ -1,10 +1,4 @@
 # Python to Linux Web App on Azure
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    appType: 'webAppLinux'
-    WebAppName: 'azsetpy'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 # Build your Python project and deploy it to Azure as a Linux Web App.
 # Change python version to one thats appropriate for your application.
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
@@ -39,10 +33,13 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
-    - task: UsePythonVersion@0
-      inputs:
-        versionSpec: '$(pythonVersion)'
-      displayName: 'Use Python $(pythonVersion)'
+    
+      
+  inputs:
+    ConnectionType: 'AzureRM'
+    appType: 'webAppLinux'
+    WebAppName: 'azsetpy'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip' 
     
     - script: |
         python -m venv antenv
